@@ -13,8 +13,7 @@ const ServiceDetails = () => {
   useEffect(() => {
     const fetchService = async () => {
       try {
-        // সিমুলেশন: লোডিং ইফেক্টটা সুন্দরভাবে দেখার জন্য ১.৫ সেকেন্ড ডিলে দেওয়া হলো
-        // প্রোডাকশনে আপনি setTimeout সরিয়ে ফেলতে পারেন
+       
         await new Promise(resolve => setTimeout(resolve, 1500)); 
         
         const res = await fetch(`/api/services`);
@@ -30,7 +29,7 @@ const ServiceDetails = () => {
     if (service_id) fetchService();
   }, [service_id]);
 
-  // ---- UNIQUE FUTURISTIC LOADING SCREEN (Hyper-Core Reactor) ----
+
   if (loading) return (
     <div className="min-h-screen bg-[#030014] flex flex-col items-center justify-center relative overflow-hidden z-50">
        {/* Background Depth */}
