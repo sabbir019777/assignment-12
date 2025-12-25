@@ -3,7 +3,7 @@ import React from 'react';
 import { Star, ShieldCheck, Activity, Quote, Globe, Cpu, ScanFace, Wifi, Zap, Terminal, BarChart3 } from 'lucide-react';
 
 const Testimonials = () => {
-  // 1. Success Metrics Data
+  
   const stats = [
     { id: 1, label: "Nodes Active", value: "2,450", icon: <ShieldCheck size={18} />, color: "cyan", unit: "UNT" },
     { id: 2, label: "Bio-Link", value: "85K", icon: <Activity size={18} />, color: "emerald", unit: "HZ" },
@@ -11,7 +11,7 @@ const Testimonials = () => {
     { id: 4, label: "Grid Sec", value: "LVL-5", icon: <Globe size={18} />, color: "purple", unit: "SEC" },
   ];
 
-  // 2. Reviews Data
+ 
   const reviews = [
     {
       id: 1,
@@ -78,7 +78,7 @@ const Testimonials = () => {
   const row1 = reviews.slice(0, 3);
   const row2 = reviews.slice(3, 6);
 
-  // --- REUSED COMPONENTS ---
+
   
   const ReviewCard = ({ review }) => (
     // Mobile-first width: w-[85vw], Desktop: md:w-[450px]
