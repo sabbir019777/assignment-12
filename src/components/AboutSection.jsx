@@ -133,7 +133,7 @@ const AboutSection = () => {
                 </div>
               ))}
 
-              {/* Futuristic HUD Overlays (The "Iron Man" Interface Look) */}
+        
               
               {/* 1. Scanline Animation */}
               <div className="absolute inset-0 z-20 pointer-events-none bg-gradient-to-b from-transparent via-cyan-500/10 to-transparent h-[20%] w-full animate-[scan_4s_linear_infinite]"></div>
@@ -148,6 +148,7 @@ const AboutSection = () => {
               <div className="absolute bottom-6 right-6 w-12 h-12 border-b-2 border-r-2 border-cyan-500 z-20"></div>
 
               {/* Floating Data Card */}
+
               <div className="absolute bottom-12 left-12 right-12 z-30">
                 <div className="backdrop-blur-xl bg-black/60 border border-white/10 p-6 rounded-xl relative overflow-hidden">
                   <div className="absolute top-0 left-0 w-1 h-full bg-cyan-500"></div>
@@ -165,6 +166,7 @@ const AboutSection = () => {
                     </div>
                     
                     {/* Rotating Element */}
+
                     <div className="relative w-16 h-16 flex items-center justify-center">
                       <div className="absolute inset-0 border-2 border-dashed border-gray-600 rounded-full animate-[spin_10s_linear_infinite]"></div>
                       <div className="absolute inset-2 border border-cyan-500/30 rounded-full"></div>
@@ -175,6 +177,7 @@ const AboutSection = () => {
               </div>
 
               {/* Top Tech Badge */}
+
               <div className="absolute top-6 left-1/2 -translate-x-1/2 z-30 px-4 py-1 bg-black/60 backdrop-blur-md border border-white/10 rounded-full flex items-center gap-2">
                 <Globe size={12} className="text-cyan-400" />
                 <span className="text-[10px] font-mono text-cyan-400">GLOBAL_GRID_V.2.0</span>
@@ -183,6 +186,7 @@ const AboutSection = () => {
             </div>
             
             {/* Background Glow behind the card */}
+            
             <div className="absolute -inset-4 bg-cyan-500/20 rounded-[50px] blur-2xl -z-10 animate-pulse"></div>
           </div>
 
