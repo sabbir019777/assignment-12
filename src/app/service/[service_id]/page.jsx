@@ -1,4 +1,4 @@
-// src/app/service/[service_id]/page.jsx
+
 
 import ServiceDetails from "./ServiceDetails";
 
@@ -13,9 +13,9 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Page({ params }) {
-  // ১. params কে await করতে হবে
+
   const resolvedParams = await params;
 
-  // ২. নিশ্চিত করুন ServiceDetails ঠিকভাবে ইম্পোর্ট হয়েছে
+
   return <ServiceDetails service_id={resolvedParams.service_id} />;
 }
