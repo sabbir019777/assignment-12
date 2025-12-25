@@ -1,8 +1,8 @@
-// src/app/layout.js
+
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Toaster } from "react-hot-toast";
-import { AuthProvider } from "../context/AuthContext"; // আপনার AuthProvider ইম্পোর্ট করুন
+import { AuthProvider } from "../context/AuthContext"; 
 
 import "./globals.css";
 
