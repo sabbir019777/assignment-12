@@ -1,4 +1,4 @@
-// src/app/[...not-found]/page.js
+
 import Link from 'next/link';
 
 export const metadata = {

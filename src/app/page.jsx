@@ -1,7 +1,7 @@
-// src/app/page.js
+
 import React from 'react';
 
-// পরিবর্তন: Hero কে { } এর মধ্যে ইমপোর্ট করা হয়েছে
+
 import { Hero } from "../components/Hero"; 
 
 import AboutSection from "../components/AboutSection";
