@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-// পরিবর্তন: const এর আগে 'export' যুক্ত করা হয়েছে
+
 export const Hero = () => {
   const slides = [
     {
@@ -22,7 +22,7 @@ export const Hero = () => {
       subtitle: "CARE SYSTEMS",
       desc: "Reliable and trusted care services. Making caregiving easy, secure, and accessible via next-gen protocols.",
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqT9t4ICc1UZReas0sKpcck74FJ_NAGu8YSA&s",
-      accent: "#00f2fe", // Cyan
+      accent: "#00f2fe", 
       icon: <HeartPulse className="w-6 h-6" />,
       stat: "98% Recovery Rate",
     },
@@ -32,7 +32,7 @@ export const Hero = () => {
       subtitle: "BABYSITTING",
       desc: "Expert caretakers verified by biometric security. Secure a peaceful environment for your little ones.",
       image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=2040",
-      accent: "#10b981", // Emerald
+      accent: "#10b981", 
       icon: <Baby className="w-6 h-6" />,
       stat: "Verified Experts",
     },
@@ -42,7 +42,7 @@ export const Hero = () => {
       subtitle: "ELDERLY CARE",
       desc: "Empowering seniors with dignity and specialized medical attention. Premium lifestyle monitoring.",
       image: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=2070",
-      accent: "#f59e0b", // Amber
+      accent: "#f59e0b",
       icon: <Users className="w-6 h-6" />,
       stat: "24/7 Monitoring",
     },
@@ -52,7 +52,7 @@ export const Hero = () => {
       subtitle: "RECOVERY LABS",
       desc: "High-tech home nursing care for rapid recovery. Clinical expertise delivered with personal empathy.",
       image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053",
-      accent: "#3b82f6", // Blue
+      accent: "#3b82f6",
       icon: <Activity className="w-6 h-6" />,
       stat: "Clinical Grade",
     },
@@ -62,7 +62,7 @@ export const Hero = () => {
       subtitle: "ASSISTANCE",
       desc: "Inclusive care programs designed for neurodiverse individuals. Fostering growth and independence.",
       image: "https://elitecaresolutionsnevada.com/wp-content/uploads/2024/02/elite-care-solutions-las-vegas-henderson-nevada-tamara-shaw-7.jpg",
-      accent: "#d946ef", // Fuchsia
+      accent: "#d946ef", 
       icon: <Sparkles className="w-6 h-6" />,
       stat: "Personalized AI",
     },
@@ -71,17 +71,16 @@ export const Hero = () => {
   const [current, setCurrent] = useState(0);
   const [progress, setProgress] = useState(0);
 
-  // Next Slide Function
+
   const nextSlide = useCallback(() => {
     setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   }, [slides.length]);
 
-  // Previous Slide Function
+
   const prevSlide = useCallback(() => {
     setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   }, [slides.length]);
 
-  // --- Auto Slide Logic ---
   useEffect(() => {
     const timer = setInterval(() => {
       setProgress((oldProgress) => {
@@ -95,7 +94,7 @@ export const Hero = () => {
     return () => clearInterval(timer);
   }, [slides.length]);
 
-  // --- Reset Progress on Slide Change ---
+
   useEffect(() => {
     setProgress(0);
   }, [current]);
