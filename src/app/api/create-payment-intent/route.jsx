@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 // Stripe কনফিগারেশন এভাবে লিখলে বিল্ড টাইমে এরর দিবে না
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY || ""); 
+// এই পরিবর্তনটি বিল্ড এরর আটকাবে
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY || "dummy_key");
 
 export async function POST(request) {
   try {
