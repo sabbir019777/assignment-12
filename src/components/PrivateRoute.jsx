@@ -1,21 +1,21 @@
 "use client";
-import { useAuth } from "@/context/AuthContext";
+import { useAuth } from "../context/AuthContext";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
-import { Hexagon, Zap } from "lucide-react"; // আপনার লোডারের জন্য
+import { Hexagon, Zap } from "lucide-react"; 
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
-    // লোডিং শেষ হওয়ার পর ইউজার না থাকলে লগইন পেজে পাঠাবে
+
     if (!loading && !user) {
       router.push("/login");
     }
   }, [user, loading, router]);
 
-  // Firebase ডাটা চেক করার সময় আপনার ফিউচারিস্টিক HUD লোডার
+
   if (loading) {
     return (
       <div className="min-h-screen bg-[#030014] flex flex-col items-center justify-center font-mono z-50">
@@ -30,7 +30,7 @@ const PrivateRoute = ({ children }) => {
     );
   }
 
-  // ইউজার থাকলে চিলড্রেন (বুকিং পেজ) দেখাবে
+
   return user ? children : null;
 };
 
