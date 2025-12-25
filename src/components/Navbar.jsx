@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { 
   Menu, X, HeartPulse, ChevronRight, Zap, ShieldCheck, LogOut, 
   ListChecks, Info, LayoutGrid, Cpu, Activity, Terminal, ShieldAlert 
-} from 'lucide-react'; // এখানে Cpu, Activity, Terminal, ShieldAlert যুক্ত করা হয়েছে
+} from 'lucide-react'; 
 import { useAuth } from '../context/AuthContext'; 
 
 const Navbar = () => {
@@ -14,12 +14,10 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const dropdownRef = useRef(null);
 
-  // স্ক্রল হ্যান্ডলার
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
-    
-    // ড্রপডাউনের বাইরে ক্লিক করলে বন্ধ করার লজিক
+  
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setShowDropdown(false);
