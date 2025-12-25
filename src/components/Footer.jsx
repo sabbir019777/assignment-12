@@ -1,7 +1,7 @@
 import React from 'react';
 import { Facebook, Linkedin, Youtube, ExternalLink } from 'lucide-react';
 
-// কাস্টম X (Twitter) আইকন কম্পোনেন্ট
+
 const XIcon = ({ size = 20 }) => (
   <svg 
     width={size} 
@@ -24,6 +24,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16">
           
           {/* Column 1: Brand */}
+
           <div className="md:col-span-4 space-y-8">
             <div>
               <h2 className="text-5xl font-black tracking-[-0.05em] italic">
@@ -40,6 +41,7 @@ const Footer = () => {
           </div>
 
           {/* Column 2: Expertise */}
+
           <div className="md:col-span-2 space-y-6">
             <h3 className="text-white font-bold uppercase tracking-[0.3em] text-[10px] opacity-60">Expertise</h3>
             <ul className="space-y-4">
@@ -53,6 +55,7 @@ const Footer = () => {
           </div>
 
           {/* Column 3: System */}
+
           <div className="md:col-span-2 space-y-6">
             <h3 className="text-white font-bold uppercase tracking-[0.3em] text-[10px] opacity-60">System</h3>
             <ul className="space-y-4 text-gray-400">
@@ -67,6 +70,7 @@ const Footer = () => {
           </div>
 
           {/* Column 4: Contact & Socials */}
+
           <div className="md:col-span-4 space-y-10">
             <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-xl hover:border-cyan-500/30 transition-colors duration-500">
               <h3 className="text-white font-bold uppercase tracking-[0.2em] text-[10px] mb-4 opacity-50">Secure Channel</h3>
@@ -78,8 +82,11 @@ const Footer = () => {
             <div className="flex gap-5">
               {[
                 { name: 'FB', icon: <Facebook size={20} />, color: 'hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] hover:border-blue-500' },
+
                 { name: 'X', icon: <XIcon size={18} />, color: 'hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:border-white' },
+
                 { name: 'LI', icon: <Linkedin size={20} />, color: 'hover:shadow-[0_0_20px_rgba(8,145,178,0.5)] hover:border-cyan-500' },
+                
                 { name: 'YT', icon: <Youtube size={20} />, color: 'hover:shadow-[0_0_20px_rgba(239,68,68,0.5)] hover:border-red-500' }
               ].map((social, idx) => (
                 <div 
