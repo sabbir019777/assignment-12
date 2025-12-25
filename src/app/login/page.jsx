@@ -11,8 +11,8 @@ import {
   UserPlus,
   Cpu,
   Activity,
-  Eye,      // Eye icon import
-  EyeOff    // EyeOff icon import
+  Eye,     
+  EyeOff   
 } from "lucide-react";
 import Link from "next/link";
 import { auth, googleProvider } from "../../firebase/firebase.config"; 
@@ -20,7 +20,7 @@ import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 
 const LoginPage = () => {
   const router = useRouter();
-  const [showPassword, setShowPassword] = useState(false); // পাসওয়ার্ড ভিজিবিলিটি স্টেট
+  const [showPassword, setShowPassword] = useState(false); 
   const [formData, setFormData] = useState({
     email: "",
     password: "",

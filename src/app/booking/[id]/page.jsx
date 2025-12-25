@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 import { useAuth } from '../../../context/AuthContext'; 
 import toast from "react-hot-toast";
-import emailjs from '@emailjs/browser'; // ১. ইমেইল পাঠানোর লাইব্রেরি যোগ করা হয়েছে
+import emailjs from '@emailjs/browser'; 
 
 const locationData = {
   "Dhaka": ["Dhaka", "Gazipur", "Narayanganj", "Tangail"],
