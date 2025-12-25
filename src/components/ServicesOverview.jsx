@@ -55,7 +55,7 @@ export const ServicesOverview = () => {
   return (
     <section id="services" className="relative py-32 bg-[#020408] overflow-hidden text-white font-sans">
       
-      {/* ---- Ultra Futuristic Background Layer ---- */}
+     
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_49%,rgba(6,182,212,0.05)_50%,transparent_51%)] bg-[size:100%_4px] animate-scanline opacity-20"></div>
         <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
