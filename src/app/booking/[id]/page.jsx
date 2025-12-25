@@ -9,13 +9,21 @@ import toast from "react-hot-toast";
 import emailjs from '@emailjs/browser'; 
 
 const locationData = {
+
   "Dhaka": ["Dhaka", "Gazipur", "Narayanganj", "Tangail"],
+  
   "Chattogram": ["Chattogram", "Cox's Bazar", "Comilla"],
+
   "Khulna": ["Khulna", "Jessore", "Satkhira"],
+
   "Rajshahi": ["Rajshahi", "Bogra", "Pabna"],
+
   "Barisal": ["Barisal", "Bhola", "Patuakhali"],
+
   "Sylhet": ["Sylhet", "Sunamganj", "Habiganj"],
+
   "Rangpur": ["Rangpur", "Dinajpur", "Kurigram"],
+
   "Mymensingh": ["Mymensingh", "Jamalpur", "Netrokona"]
 };
 

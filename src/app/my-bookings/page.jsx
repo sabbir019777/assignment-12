@@ -39,14 +39,14 @@ const MyBookingsPage = () => {
     }
   }, [user, authLoading, router]);
 
-  // ১. বুকিং ক্যানসেল করার লজিক (শুধুমাত্র স্ট্যাটাস আপডেট)
+
   const handleCancel = async (id) => {
     const confirmed = confirm("URGENT: Abort this care protocol? System state will be set to CANCELLED.");
     if (!confirmed) return;
 
     try {
       const res = await fetch('/api/my-bookings', {
-        method: 'PATCH', // স্ট্যাটাস আপডেটের জন্য PATCH মেথড
+        method: 'PATCH', 
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id, status: 'Cancelled' }), 
       });
