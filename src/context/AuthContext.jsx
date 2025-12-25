@@ -1,0 +1,33 @@
+"use client";
+import { createContext, useContext, useEffect, useState } from "react";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { auth } from "../firebase/firebase.config";
+
+const AuthContext = createContext({});
+
+export const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // এটি চেক করবে আগে থেকেই লগইন করা আছে কি না
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      setLoading(false);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  const logOut = () => {
+    setLoading(true);
+    return signOut(auth);
+  };
+
+  return (
+    <AuthContext.Provider value={{ user, loading, logOut }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+export const useAuth = () => useContext(AuthContext);
