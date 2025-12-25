@@ -1,10 +1,17 @@
 import { NextResponse } from "next/server";
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+// Stripe কনফিগারেশন এভাবে লিখলে বিল্ড টাইমে এরর দিবে না
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY || ""); 
 
 export async function POST(request) {
   try {
     const { price } = await request.json();
-    const amount = parseInt(price * 100); // সেন্টে রূপান্তর
+    
+    // প্রাইস চেক করা জরুরি যেন খালি না থাকে
+    if (!price) {
+      return NextResponse.json({ message: "Price is required" }, { status: 400 });
+    }
+
+    const amount = Math.round(price * 100); // parseInt এর বদলে Math.round ব্যবহার করা নিরাপদ
 
     const paymentIntent = await stripe.paymentIntents.create({
       amount: amount,
@@ -14,6 +21,7 @@ export async function POST(request) {
 
     return NextResponse.json({ clientSecret: paymentIntent.client_secret });
   } catch (error) {
+    console.error("Stripe Error:", error);
     return NextResponse.json({ message: "Payment Intent Error", error: error.message }, { status: 500 });
   }
 }
