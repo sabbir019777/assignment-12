@@ -1,47 +1,31 @@
-
+import { Inter } from "next/font/google";
+import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { AuthProvider } from "../context/AuthContext";
 import { Toaster } from "react-hot-toast";
-import { AuthProvider } from "../context/AuthContext"; 
 
-import "./globals.css";
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Care.xyz | Elite Care Protocols",
-  description: "Next-Gen Baby Sitting & Elderly Care Platform",
+  title: "Care.xyz",
+  description: "Next-Gen Care Platform",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="antialiased flex flex-col min-h-screen bg-[#050505] text-white">
-        
-        {/* পুরো অ্যাপকে AuthProvider দিয়ে মুড়িয়ে দিতে হবে */}
+      <body className={`${inter.className} bg-[#050505] text-white`}>
         <AuthProvider>
-          
-          {/* টোস্ট মেসেজ কন্টেইনার */}
-          <Toaster 
-            position="top-center" 
-            toastOptions={{
-              style: {
-                background: '#111',
-                color: '#fff',
-                border: '1px solid rgba(255,255,255,0.1)'
-              }
-            }} 
-          />
-          
-          <Navbar /> 
-          
-          <main className="flex-grow">
+          <Toaster position="top-center" />
+          <Navbar />
+
+          <main className="min-h-screen">
             {children}
           </main>
-
-          <Footer /> 
-          
+          <Footer />
         </AuthProvider>
-
       </body>
     </html>
   );
-}
+}            

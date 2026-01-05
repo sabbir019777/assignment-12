@@ -16,7 +16,7 @@ const XIcon = ({ size = 20 }) => (
 const Footer = () => {
   return (
     <footer className="relative bg-gray-950 text-white pt-24 pb-12 overflow-hidden font-sans">
-      {/* ব্যাকগ্রাউন্ড নিয়ন গ্লো */}
+   
       <div className="absolute top-[-100px] left-1/4 w-[300px] h-[300px] bg-blue-500/10 rounded-full blur-[100px] animate-pulse"></div>
       <div className="absolute bottom-[-50px] right-1/4 w-[250px] h-[250px] bg-cyan-500/10 rounded-full blur-[100px] animate-pulse delay-1000"></div>
 

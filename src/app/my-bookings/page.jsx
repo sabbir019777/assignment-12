@@ -205,15 +205,15 @@ const MyBookingsPage = () => {
                             </div>
 
                             <div className="flex gap-3 mt-4 sm:mt-0">
-                                {/* ২. Cancel বাটন: শুধুমাত্র যদি স্ট্যাটাস ক্যানসেলড না থাকে */}
+                           
                                 {!isCancelled && status !== 'Completed' && (
                                     <button onClick={() => handleCancel(booking._id)} className="flex items-center gap-2 px-6 py-3 bg-orange-950/20 border border-orange-500/50 text-orange-400 hover:bg-orange-600 hover:text-white transition-all uppercase text-[10px] font-black font-mono clip-button">
-                                       <XCircle size={14} /> Abort_Mission
+                                       <XCircle size={14} /> Canceled
                                     </button>
                                 )}
 
                                 <button onClick={() => handleDelete(booking._id)} className="flex items-center gap-2 px-6 py-3 bg-red-950/20 border border-red-500/50 text-red-500 hover:bg-red-600 hover:text-white transition-all uppercase text-[10px] font-black font-mono clip-button group">
-                                   <Trash2 size={14} className="group-hover:rotate-12 transition-transform" /> Purge_Record
+                                   <Trash2 size={14} className="group-hover:rotate-12 transition-transform" /> Delete
                                 </button>
                             </div>
                          </div>

@@ -1,4 +1,4 @@
-import { connectDB } from "@/lib/db"; // নিশ্চিত করুন পাথ সঠিক আছে
+import { connectDB } from "../../../lib/db"; 
 import { NextResponse } from "next/server";
 
 export async function POST(request) {
@@ -7,7 +7,7 @@ export async function POST(request) {
         const usersCollection = db.collection("users");
         const newUser = await request.json();
         
-        // রেজিস্ট্রেশন ডাটা সেভ করা
+        
         const result = await usersCollection.insertOne(newUser);
         return NextResponse.json(result);
     } catch (error) {

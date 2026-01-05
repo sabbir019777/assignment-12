@@ -5,14 +5,13 @@ export async function POST(request) {
   try {
     const bookingData = await request.json();
     
-    // ডাটাবেজ কানেকশন
+
     const db = await connectDB();
     const bookingsCollection = db.collection("bookings");
 
-    // ডাটা ইনসার্ট করা
     const newBooking = {
       ...bookingData,
-      status: "Pending", // ডিফল্ট স্ট্যাটাস
+      status: "Pending",
       createdAt: new Date(),
     };
 

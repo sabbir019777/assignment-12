@@ -10,12 +10,35 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-   
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-      setLoading(false);
-    });
-    return () => unsubscribe();
+    let mounted = true;
+    
+    const safety = setTimeout(() => {
+      if (mounted) setLoading(false);
+    }, 7000);
+
+    const unsubscribe = onAuthStateChanged(
+      auth,
+      (currentUser) => {
+        if (!mounted) return;
+        setUser(currentUser);
+        setLoading(false);
+        clearTimeout(safety);
+      },
+      (err) => {
+        console.error("onAuthStateChanged error:", err);
+        if (mounted) {
+          setUser(null);
+          setLoading(false);
+          clearTimeout(safety);
+        }
+      }
+    );
+
+    return () => {
+      mounted = false;
+      clearTimeout(safety);
+      if (typeof unsubscribe === "function") unsubscribe();
+    };
   }, []);
 
   const logOut = () => {

@@ -324,4 +324,3 @@ export const Hero = () => {
     </section>
   );
 };
-// পরিবর্তন: export default Hero ডিলিট করা হয়েছে।

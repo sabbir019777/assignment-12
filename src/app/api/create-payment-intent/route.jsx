@@ -7,12 +7,12 @@ export async function POST(request) {
   try {
     const { price } = await request.json();
     
-    // প্রাইস চেক করা জরুরি যেন খালি না থাকে
+   
     if (!price) {
       return NextResponse.json({ message: "Price is required" }, { status: 400 });
     }
 
-    const amount = Math.round(price * 100); // parseInt এর বদলে Math.round ব্যবহার করা নিরাপদ
+    const amount = Math.round(price * 100); 
 
     const paymentIntent = await stripe.paymentIntents.create({
       amount: amount,

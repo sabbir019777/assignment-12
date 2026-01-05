@@ -2,7 +2,7 @@ import { connectDB } from "../../../lib/db";
 import { ObjectId } from "mongodb";
 import { NextResponse } from "next/server";
 
-// ১. ডাটা দেখানোর জন্য GET মেথড
+
 export const GET = async (request) => {
     try {
         const db = await connectDB();
@@ -14,16 +14,16 @@ export const GET = async (request) => {
     }
 };
 
-// ২. স্ট্যাটাস আপডেট করার জন্য PATCH মেথড (Abort Mission এর জন্য এটি দরকার)
+
 export const PATCH = async (request) => {
     try {
-        const { id, status } = await request.json(); // ফ্রন্টএন্ড থেকে id এবং status আসবে
+        const { id, status } = await request.json();
         const db = await connectDB();
         const bookingsCollection = db.collection("bookings");
 
         const result = await bookingsCollection.updateOne(
             { _id: new ObjectId(id) },
-            { $set: { status: status } } // ডাটাবেসে স্ট্যাটাস 'Cancelled' সেট হবে
+            { $set: { status: status } } 
         );
 
         if (result.matchedCount === 1) {
@@ -36,7 +36,7 @@ export const PATCH = async (request) => {
     }
 };
 
-// ৩. ডাটা ডিলিট করার জন্য DELETE মেথড
+
 export const DELETE = async (request) => {
     try {
         const { id } = await request.json(); 
